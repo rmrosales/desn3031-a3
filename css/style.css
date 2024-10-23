@@ -1,0 +1,252 @@
+:root {
+    /* Color Scheme */
+    --primary-color: #ffffff;
+    --accent-color-1: #061efb;
+    --accent-color-2: #afafaf;
+    --navigation-color: #171717;
+    --text-color: #e7e7e7;
+    --text-color--content: #afafaf;
+    --text-color-lighter: #9999b2;
+    --text-color-light: #f4f4f4;
+    --text-color-dark: #30313d;
+    --background-color: #171717;
+    --header-background: #2b2b2b;
+    --footer-background: #e4e4e4;
+    --footer-text-color: #7a7d89;
+    --footer-text-hover: #8f93a2;
+    /* Typography */
+    --font-family: Helvetica, Arial, sans-serif;
+    --font-size-base: 18px;
+    --font-size-heading: 24px;
+    --font-weight-regular: 500;
+    --font-weight-bold: 900;
+    /* Spacing & layout */
+    --spacing-unit: 18px;
+    /* Transitions */
+    --transition-duration: 0.3s;
+    --scale: 1;
+    --scale-hover: 1.02;
+}
+
+body {
+    /* Global settings */
+    background-color: var(--background-color);
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 2.6em;
+}
+
+p {
+    color: var(--text-color);
+    font-size: .85em;
+    font-weight: 300;
+    letter-spacing: .02em;
+    line-height: 1.35em;
+    margin: 0;
+}
+
+/* ----Navigation Styling---- */
+
+.nav-wrapper {
+    background-color: var(--navigation-color);
+    align-items: center;
+    height: 8vh;
+    margin: auto;
+}
+
+.nav-container {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 8vh;
+    width: 80vw;
+    margin: auto;
+}
+
+.nav-container h1 {
+    color: var(--text-color);
+    font-size: 1.6em;
+    margin: 0;
+}
+
+.nav-container img {
+    height: 40%;
+    width: auto;
+}
+
+
+.nav-container ul li {
+    display: inline;
+}
+
+.nav-container a {
+    font-size: 1em;
+    letter-spacing: .02em;
+    /* font-weight: 500; */
+    color: var(--text-color);
+    margin-left: 44px;
+    text-decoration: none;
+}
+
+.nav-container a:hover {
+    color: var(--accent-color-2);
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--text-color)
+}
+
+/* ----Banner Styling---- */
+
+.banner-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 44px;
+    width: 80vw;
+    margin: auto;
+    margin-top: 34px;
+
+}
+
+.banner-grid-item {
+    z-index: -2;
+    /* background-color: #242424; */
+    padding: 0;
+}
+
+#banner-grid-item-1 {
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ----Medie Queries---- */
+
+@media only screen and (max-width: 768px) {
+
+    /* ----Nav Fixes---- */
+
+    .nav-container ul li {
+        display: block;
+    }
+
+    .nav-menu {
+        z-index: -1;
+        background-color: var(--navigation-color);
+        position: absolute;
+        top: -110%;
+        padding-left: 10vw;
+        padding-bottom: 34px;
+        left: 0;
+        width: 100%;
+        text-align: left;
+        transition: 0.3s;
+    }
+
+    .nav-menu li {
+        margin-top: 24px;
+    }
+
+    .nav-menu li a{
+        font-size: 1em;
+        margin: 0;
+    }
+
+    .nav-menu.active {
+        top: 5vh;
+    }
+
+    .nav-menu.active li {
+        margin-top: 24px;
+    }
+
+    .nav-menu.active li a{
+        font-size: 1em;
+        margin: 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* ----Banner Fixes---- */
+
+    #banner-grid-item-1 {
+        grid-column: 1 / 5;
+        grid-row: 1 / 2;
+        max-height: 200px;
+    }
+    #banner-grid-item-2 {
+        grid-column: 1 / 5;
+        grid-row: 2 / 3;
+        max-height: 200px;
+    }
+
+    #banner-grid-item-3 {
+        grid-column: 1 / 5;
+        grid-row: 3 / 4;
+        max-height: 200px;
+    }
+
+    #banner-grid-item-4 {
+        grid-column: 1 / 5;
+        grid-row: 4 / 5;
+        max-height: 200px;
+    }
+    
+    
+
+}
+
+@media only screen and (max-width: 870px) {
+
+}
+
+
+
+@media only screen and (max-width: 800px) {
+
+
+}
+
