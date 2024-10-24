@@ -200,6 +200,11 @@ p {
     height: auto;
     border-radius: 20px;
     margin-bottom: 14px;
+    transition: .3s;
+}
+
+.card-grid-item img:hover {
+    opacity: 90%;
 }
 
 .item-name {
@@ -252,23 +257,86 @@ p {
     margin-top: 120px;
 }
 
-.footer-container {
+/* .footer-container {
     padding: 0;
+    padding-bottom: 60px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
+    height: 8vh;
+    width: 80vw;
+    margin: auto;
+} */
+
+.footer-container {
+    padding: 0;
+    padding-bottom: 90px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     height: 8vh;
     width: 80vw;
     margin: auto;
 }
 
+.footer-line {
+    grid-column: 1/7;
+    grid-row: 1/1;
+    height: 10px;
+}
+
+.footer-grid-item-1 {
+    grid-column: 1/2;
+    grid-row: 2/2;
+
+}
+.footer-grid-item-2 {
+    grid-column: 3/4;
+    grid-row: 2/2;
+}
+
+.footer-grid-item-3 {
+    grid-column: 4/5;
+    grid-row: 2/2;
+}
+
+.footer-grid-item-4 {
+    grid-column: 6/7;
+    grid-row: 2/2;
+    margin-top: 21px;
+    font-size: .8em;
+}
+
 .footer-container h2 {
     color: var(--text-color);
-    font-size: 1.4em;
+    font-size: 1.2em;
+    margin: 0;
+    margin-top: 21px;
+    position: relative;
+}
+
+.footer-container ul {
+    display: inline;
     margin: 0;
 }
 
+.footer-container ul li {
+    display: block;
+    margin-bottom: 12px;
+    line-height: .9em;
+}
+
+.footer-container a {
+    font-size: .7em;
+    letter-spacing: .02em;
+    /* font-weight: 500; */
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.footer-container a:hover {
+    color: var(--accent-color-2);
+}
 
 
 
@@ -404,13 +472,43 @@ p {
     }
 
     .item-name {
-        height: 90px;
+        height: 80px;
         font-size: .7em;
     }
 
     .price {
         font-size: .7em;
         height: 20px;
+    }
+
+
+    .footer-container {
+        gap: 8px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+
+    .footer-grid-item-1 {
+        grid-column: 1/2;
+        grid-row: 1/1;
+    
+    }
+
+    .footer-grid-item-2 {
+        grid-column: 3/4;
+        grid-row: 1/1;
+    }
+    
+    .footer-grid-item-3 {
+        grid-column: 5/7;
+        grid-row: 1/1;
+    }
+    .footer-grid-item-4 {
+        grid-column: 1/7;
+        grid-row: 2/2;
+        font-size: .8em;
+        margin-top: 0;
+        height: 34px;
     }
     
 
